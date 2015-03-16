@@ -1,0 +1,378 @@
+#header {
+	.navbar {
+		margin-bottom: 0;
+		border: none;
+		border-radius: 0;
+		border-bottom: 1px solid @lightBorder;
+
+		// .blueTheme;
+		// .whiteTheme;
+		background-color: @white;
+
+		.navbar-brand {
+			color: @white;
+		}
+
+		.nav {
+			&:not(.navbar-right) {
+				li {
+					.transition(background-color, .3s);
+					border-left: 1px solid @lightBorder;
+
+					&:last-child {
+						border-right: 1px solid @lightBorder;
+					}
+				}
+			}
+
+			&.primary {
+				// border-left: 2px solid darken(@blueTheme, 10%);
+				// border-right: 2px solid darken(@blueTheme, 10%);
+				margin-right: 20px;
+			}
+
+			&.categories {
+				// border-left: 2px solid darken(@blueTheme, 10%);
+				// border-right: 2px solid darken(@blueTheme, 10%);
+			}
+		}
+
+		.navbar-nav > li > a {
+			font-weight: 600;
+			color: #333;
+		}
+
+		.navbar-nav > li > a:hover, 
+		.navbar-nav > li > a:focus,
+		.navbar-nav > li > a:active {
+			color: @white;
+		}
+
+		.navbar-nav > .open > a, 
+		.navbar-nav > .open > a:hover, 
+		.navbar-nav > .open > a:focus,
+		.navbar-nav > .open > a:active {
+			background-color: darken(@blueTheme, 10%);
+			color: @white;
+		}
+
+		.dropdown {
+			position: relative;
+
+			&:hover {
+
+				.glyphicon {
+					// color: @white;
+				}
+			}
+
+			&.open {
+				.dropdown-menu {
+					.fadeInDown;
+				}
+			}
+
+			.glyphicon {
+				font-size: 13px;
+				// color: #333;
+				// position: absolute;
+				// top: 10px;
+				// left: 5px;
+			}
+		}
+
+		.dropdown-menu {
+			// background: darken(@blueTheme, 10%);
+			background: @white;
+			border: 1px solid lighten(@blueTheme, 10%);
+			border-radius: 3px;
+			padding: 0;
+			margin-top: 10px;
+			color: #333;
+
+			li a {
+				color: #333;
+				padding: 5px 20px;
+
+				&:hover {
+					color: @white;
+				}
+			}
+		}
+
+		/* Required for Down Triangle */
+		// .dropdown-menu:before, .dropdown-menu:after {
+		// 	content: "";
+		// 	position: absolute;
+		// 	width: 0;
+		// 	height: 0;
+		// 	border-style: solid;
+		// 	border-color: transparent;
+		// 	border-top: 0;
+		// }
+
+		// /* Stroke */
+		// .dropdown-menu:before {
+		// 	top: -16px;
+		// 	right: 20px;
+
+		// 	/* If 1px darken stroke slightly */
+		// 	border-bottom-color: darken(@blueTheme, 10%);
+		// 	border-width: 16px;
+		// }
+
+		/* Fill */
+		// .dropdown-menu:after {
+		// 	top: -14px;
+		// 	right: 20px;
+		// 	border-bottom-color: darken(@blueTheme, 10%);
+		// 	border-width: 15px;
+		// }
+
+		li a {
+			color: @white;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: lighten(@blueTheme, 10%);
+
+				.glyphicon {
+					.fadeInLeft;
+				}
+			}
+
+			.glyphicon {
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+#footer {
+	background-color: @white;
+	overflow: hidden;
+	border-top: 1px solid darken(@lightBorder, 10%);
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	a {
+		color: #333;
+		text-decoration: none;
+	}
+
+	.footer-column {
+		display: inline-block;
+		list-style-type: none;
+	}
+
+	.copyright {
+		margin-top: 20px;
+		text-align: center;
+
+		a {
+			font-size: 13px;
+			font-weight: 600;
+		}
+	}
+
+	.footer-links {
+		text-align: center;
+		// margin-top: 20px;
+		
+		a {
+			display: inline-block;
+			padding: 0px 10px;
+			font-size: 13px;
+			font-weight: 600;
+
+			&:hover {
+				.transition(color, .3s);
+				color: @blueTheme;
+			}
+
+			&:not(:last-child) {
+				border-right: 2px solid darken(@lightBorder, 10%);
+			}
+		}
+	}
+}
+
+#global-search {
+	padding: 15px 0px;
+	background-color: #fff;
+	// background-color: lighten(@blueTheme, 10%);
+
+	// form {
+	// 	input,
+	// 	select,
+	// 	button {
+	// 		width: 100%;
+	// 	}
+	// }
+}
+
+.post-page {
+	.post-message {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		text-align: center;
+		color: #777;
+		font-family: 'Roboto';
+
+		@media@tablet-down {
+			font-size: 16px;
+		}
+	}
+}
+
+.post-block {
+	margin-top: 60px;
+
+	@media@desktop-down {
+		margin-top: 40px;
+	}
+
+	@media@tablet-down {
+		margin-top: 20px;
+	}
+
+	.post-category {
+		float: left;
+		padding: 10px;
+		text-decoration: none;
+		width: calc(100% / 2);
+		color: @colorBlue;
+		font-family: 'Roboto';
+		font-weight: 700;
+
+		@media@phablet-down {
+			.detalii {
+				display: none;
+			}
+
+			.category-name {
+				font-size: 14px;
+			}
+		}
+
+		@media@phablet {
+			width: calc(100% / 3);
+
+			.detalii {
+				display: none;
+			}
+
+			.category-name {
+				font-size: 16px;
+			}
+		}
+
+		@media@tablet {
+			.detalii {
+				display: block;
+			}
+
+			.category-name {
+				font-size: 18px;
+			}
+		}
+
+		@media@desktop {
+			width: calc(100% / 6);
+		}
+
+		.inner {
+			height: 100px;
+			background: #efefef;
+			padding: 30px 10px 100% 10px;
+			border-radius: 4px;
+			text-align: center;
+			.transition(all, .3s);
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: @white;
+				background: lighten(@blueTheme, 10%);
+
+				.detalii {
+					color: @white;
+					.transition(all, .3s);
+				}
+
+				.category-icon {
+					&.motocicleta {
+						background-image: url('../images/icons/category-icon-motocicleta.svg');
+
+					}
+
+					&.echipament {
+						background-image: url('../images/icons/category-icon-echipament.svg');
+					}
+
+					&.piese-noi {
+						background-image: url('../images/icons/category-icon-piese.svg');
+					}
+
+					&.piese-sh {
+						background-image: url('../images/icons/category-item-piesesh.svg');
+					}
+
+					&.consumabile {
+						background-image: url('../images/icons/category-item-consumabile.svg');
+					}
+
+					&.accesorii {
+						background-image: url('../images/icons/category-item-accesorii.svg');
+					}
+				}
+			}
+
+			.category-icon {
+				display: inline-block;
+				width: 48px;
+				height: 48px;
+				margin-bottom: 10px;
+
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: 100% 100%;
+
+				&.motocicleta {
+					background-image: url('../images/icons/category-icon-motocicleta-blue.svg');
+
+				}
+
+				&.echipament {
+					background-image: url('../images/icons/category-icon-echipament-blue.svg');
+				}
+
+				&.piese-noi {
+					background-image: url('../images/icons/category-icon-piese-blue.svg');
+				}
+
+				&.piese-sh {
+					background-image: url('../images/icons/category-item-piesesh-blue.svg');
+				}
+
+				&.consumabile {
+					background-image: url('../images/icons/category-item-consumabile-blue.svg');
+				}
+
+				&.accesorii {
+					background-image: url('../images/icons/category-item-accesorii-blue.svg');
+				}
+			}
+
+			.detalii {
+				color: #777;
+				.transition(all, .3s);
+			}
+		}
+	}
+}
+
+#post-form {
+	
+}
